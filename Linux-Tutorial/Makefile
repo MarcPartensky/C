@@ -1,10 +1,14 @@
-all: bonjour
+CC=gcc
+CFLAGS=-W -Wall -ansi -pedantic
+LDFLAGS=
+EXEC=bonjour
+all: $(EXEC)
 
 bonjour: bonjour.o main.o
-	gcc -o bonjour bonjour.o main.o
+	gcc -o $@ $^ $(LDFLAGS)
 
-main.o: main.c bonjour.h
-	gcc -o main.o -c main.c
+%.o: %.c
+	gcc -o $@ -c $< $(CFLAGS)
 
 clean:
 	rm -rf *.o
