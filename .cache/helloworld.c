@@ -1,4 +1,3 @@
-#!/usr/bin/env ./shebang.py
 
 #include <stdio.h>
 int main(void) {
