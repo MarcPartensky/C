@@ -58,3 +58,12 @@ struct sockaddr_in sa;
 inet_ntop(AF_INET, &(sa.sin_addr), ip4, INET_ADDRSTRLEN);
 
 printf("The IPv4 address is: %s\n", ip4);
+
+ #include <sys/types.h>
+    #include <sys/socket.h>
+    #include <netdb.h>
+
+	int getaddrinfo(const char *node,     // e.g. "www.example.com" or IP
+									const char *service,  // e.g. "http" or port number
+									const struct addrinfo *hints,
+									struct addrinfo **res);
